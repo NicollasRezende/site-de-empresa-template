@@ -8,14 +8,17 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background-image: url('backg.jpg');
-    background-repeat: repeat-y; /* ou repeat-x ou repeat-y, dependendo de como deseja que a textura se repita */
-    animation: deslocar 20s linear infinite; /* 20s é a duração da animação, você pode ajustar conforme desejado */
+    background-repeat: repeat-y;
+    /* ou repeat-x ou repeat-y, dependendo de como deseja que a textura se repita */
+    animation: deslocar 20s linear infinite;
+    /* 20s é a duração da animação, você pode ajustar conforme desejado */
 }
 
 @keyframes deslocar {
     from {
         background-position: 0 0;
     }
+
     to {
         background-position: 100% 0;
     }
@@ -26,7 +29,66 @@ h2 {
     font-family: 'Montserrat', sans-serif;
 }
 
+.gg-arrow-up-o {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    width: 22px;
+    height: 22px;
+    border: 2px solid;
+    transform: scale(var(--ggs, 1));
+    border-radius: 20px;
+    margin: auto;
+    /* Adiciona esta linha para centralizar vertical e horizontalmente */
+    text-align: center;
+    /* Centraliza o conteúdo horizontalmente */
+    line-height: 22px;
+    /* Centraliza o conteúdo verticalmente */
+    overflow: hidden;
+    /* Garante que o ícone esteja dentro do limite do botão */
+}
 
+.gg-arrow-up-o::after,
+.gg-arrow-up-o::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: right;
+    top: 4px;
+}
+
+.gg-arrow-up-o::after {
+    width: 13px;
+    height: 13px;
+    border-top: 4px solid;
+    border-left: 4px solid;
+    transform: rotate(45deg);
+    left: 4px;
+    /* Ajusta a posição horizontal da seta */
+    top: 4px;
+    /* Ajusta a posição vertical da seta */
+}
+
+/* Estilo para o botão de voltar para cima */
+#scrollTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    background: #262629;
+    color: #9b59b6;
+    border-radius: 40%;
+    padding: 25px;
+    transition: background-color 0.3s;
+}
+
+#scrollTop:hover {
+    background-color: #9b59b6;
+    color: #fff;
+}
 
 /* Cabeçalho */
 
@@ -44,20 +106,21 @@ header {
 
 header h1 {
     position: absolute;
-    left: 20px; /* afasta da borda */
+    left: 20px;
+    /* afasta da borda */
     top: 20px;
-    
-    }
+
+}
 
 header h1 span {
-        display: inline-block;
-        padding: 8px 16px; 
-        border-radius: 4px;
-        background: #262629; 
-        color: #9b59b6;
-        border: 2px solid #9b59b6;
-        box-shadow: 0 -4px 8px rgba(161, 154, 154, 0.1);
-        }
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 4px;
+    background: #262629;
+    color: #9b59b6;
+    border: 2px solid #9b59b6;
+    box-shadow: 0 -4px 8px rgba(161, 154, 154, 0.1);
+}
 
 .menu__item {
     border-radius: 40px;
